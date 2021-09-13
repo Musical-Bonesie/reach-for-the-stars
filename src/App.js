@@ -1,23 +1,49 @@
-import logo from "./logo.svg";
+import { MediaCard, AppProvider } from "@shopify/polaris";
 import "./App.scss";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <AppProvider
+        i18n={{
+          Polaris: {
+            ResourceList: {
+              sortingLabel: "Sort by",
+              defaultItemSingular: "item",
+              defaultItemPlural: "items",
+              showing: "Showing {itemsCount} {resource}",
+              Item: {
+                viewItem: "View details for {itemName}",
+              },
+            },
+            Common: {
+              checkbox: "checkbox",
+            },
+          },
+        }}
+      >
+        <MediaCard
+          title="Getting Started"
+          primaryAction={{
+            content: "Learn about getting started",
+            onAction: () => {},
+          }}
+          description="Discover how Shopify can power up your entrepreneurial journey."
+          popoverActions={[{ content: "Dismiss", onAction: () => {} }]}
+          size="small"
         >
-          Learn React
-        </a>
-      </header>
+          <img
+            alt=""
+            width="100%"
+            height="100%"
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+            src="https://burst.shopifycdn.com/photos/business-woman-smiling-in-office.jpg?width=1850"
+          />
+        </MediaCard>
+      </AppProvider>
     </div>
   );
 }
