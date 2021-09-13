@@ -1,0 +1,11 @@
+// @import "@shopify/polaris/build/esm/styles.css";
+
+.Polaris-MediaCard {
+  &__hero-image {
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+    border-radius: 40px;
+  }
+}

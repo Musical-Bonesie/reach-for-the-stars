@@ -1,4 +1,5 @@
-import { MediaCard, AppProvider } from "@shopify/polaris";
+import { AppProvider } from "@shopify/polaris";
+import HomePage from "./pages/HomePage/index";
 import "./App.scss";
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
           },
         }}
       >
-        <MediaCard
+        <HomePage />
+        {/* <MediaCard
           title="Getting Started"
           primaryAction={{
             content: "Learn about getting started",
@@ -42,7 +44,7 @@ function App() {
             }}
             src="https://burst.shopifycdn.com/photos/business-woman-smiling-in-office.jpg?width=1850"
           />
-        </MediaCard>
+        </MediaCard> */}
       </AppProvider>
     </div>
   );
