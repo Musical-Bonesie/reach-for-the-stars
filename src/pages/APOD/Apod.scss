@@ -11,6 +11,9 @@
     object-fit: cover;
     border-radius: 10px;
   }
+  &__header {
+    padding: 1rem;
+  }
   &__heading {
     font-size: 2rem;
   }

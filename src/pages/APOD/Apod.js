@@ -47,7 +47,7 @@ export default class Stars extends Component {
             <p className="card__copy">{APOD.explanation}</p>
           </article>
           <div className="card__button">
-            <button>Like</button>
+            <button onClick={console.log("click!")}>Like</button>
           </div>
         </section>
         <ShootingStars />
