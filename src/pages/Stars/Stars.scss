@@ -1,12 +1,18 @@
 .card {
+  margin: 1.5rem;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  background-color: rgb(109, 107, 107, 0.2);
+  background-color: rgb(233, 229, 229);
 
   &__image {
     width: 100%;
     object-position: center;
     object-fit: cover;
-    border-radius: 3px;
+    border-radius: 10px;
   }
+}
+
+.apod__loading {
+  margin: 10rem;
 }

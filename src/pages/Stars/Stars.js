@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { getAllImages } from "../../utils/dataUtils";
 import "./Stars.scss";
+import ShootingStars from "../../components/ShootingStars/ShootingStars";
 //TODO remember to add photo alt {}
 
 export default class Stars extends Component {
@@ -25,6 +26,7 @@ export default class Stars extends Component {
       return (
         <>
           <img
+            className="apod__loading"
             src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"
             alt="loading"
           />
@@ -32,10 +34,10 @@ export default class Stars extends Component {
       );
     }
     return (
-      // this.state.APOD && (
       <>
-        <h1>Astronomy Picture of the Day</h1>
         <section className="card">
+          <h1 className="card__heading">Astronomy Picture of the Day</h1>
+
           <figure className="card__figure">
             <img className="card__image" src={APOD.hdurl} alt={APOD.title} />
           </figure>
@@ -47,8 +49,8 @@ export default class Stars extends Component {
             <button>Like</button>
           </div>
         </section>
+        <ShootingStars />
       </>
-      // )
     );
   }
 }
