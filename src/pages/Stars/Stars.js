@@ -24,7 +24,10 @@ export default class Stars extends Component {
     if (APOD === null) {
       return (
         <>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"
+            alt="loading"
+          />
         </>
       );
     }
@@ -34,7 +37,7 @@ export default class Stars extends Component {
         <h1>Astronomy Picture of the Day</h1>
         <section className="card">
           <figure className="card__figure">
-            <img className="card__image" src={APOD.hdurl} alt="description" />
+            <img className="card__image" src={APOD.hdurl} alt={APOD.title} />
           </figure>
           <article className="card__header">
             <h1 className="card__title">{APOD.title}</h1>
