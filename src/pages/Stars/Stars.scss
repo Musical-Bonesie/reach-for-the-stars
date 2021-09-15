@@ -1,0 +1,12 @@
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: hotpink;
+
+  &__image {
+    width: 30%;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 3px;
+  }
+}

@@ -1,10 +1,12 @@
 import { AppProvider } from "@shopify/polaris";
+import { BrowserRouter, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage/index";
+import Stars from "./pages/Stars/index";
 import "./App.scss";
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <AppProvider
         i18n={{
           Polaris: {
@@ -23,9 +25,10 @@ function App() {
           },
         }}
       >
-        <HomePage />
+        <Route exact path="/" component={HomePage} />
       </AppProvider>
-    </div>
+      <Route exact path="/stars" component={Stars} />
+    </BrowserRouter>
   );
 }
 
