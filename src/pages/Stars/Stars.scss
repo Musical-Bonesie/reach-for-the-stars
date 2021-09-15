@@ -1,10 +1,10 @@
 .card {
   display: flex;
   flex-wrap: wrap;
-  background-color: hotpink;
+  background-color: rgb(109, 107, 107, 0.2);
 
   &__image {
-    width: 30%;
+    width: 100%;
     object-position: center;
     object-fit: cover;
     border-radius: 3px;
