@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { getAllImages } from "../../utils/dataUtils";
-import "./Stars.scss";
+import "./Apod.scss";
 import ShootingStars from "../../components/ShootingStars/ShootingStars";
 //TODO remember to add photo alt {}
 
@@ -42,8 +42,9 @@ export default class Stars extends Component {
             <img className="card__image" src={APOD.hdurl} alt={APOD.title} />
           </figure>
           <article className="card__header">
-            <h1 className="card__title">{APOD.title}</h1>
-            <p>{APOD.explanation}</p>
+            <h1 className="card__content">{APOD.title}</h1>
+            <h2 className="card__copy">{APOD.date}</h2>
+            <p className="card__copy">{APOD.explanation}</p>
           </article>
           <div className="card__button">
             <button>Like</button>

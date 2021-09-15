@@ -1,7 +1,7 @@
 import { AppProvider } from "@shopify/polaris";
 import { BrowserRouter, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage/index";
-import Stars from "./pages/Stars/index";
+import Apod from "./pages/APOD/index";
 import "./App.scss";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
       >
         <Route exact path="/" component={HomePage} />
       </AppProvider>
-      <Route exact path="/stars" component={Stars} />
+      <Route exact path="/astronomyoftheday" component={Apod} />
     </BrowserRouter>
   );
 }

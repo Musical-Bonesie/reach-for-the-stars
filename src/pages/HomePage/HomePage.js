@@ -7,7 +7,7 @@ export default class HomePage extends Component {
   handleClick = (event) => {
     event.preventDefault();
     console.log("to the stars of the day!!");
-    this.props.history.push("/stars");
+    this.props.history.push("/astronomyoftheday");
   };
   render() {
     return (
@@ -27,6 +27,7 @@ export default class HomePage extends Component {
             alt="Stars"
             src={HeroStars}
           />
+          <button></button>
         </MediaCard>
       </>
     );

@@ -11,6 +11,16 @@
     object-fit: cover;
     border-radius: 10px;
   }
+  &__heading {
+    font-size: 2rem;
+  }
+  &__content {
+    font-size: 1.5rem;
+  }
+  &__copy {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
 }
 
 .apod__loading {
