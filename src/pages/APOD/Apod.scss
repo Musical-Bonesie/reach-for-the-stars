@@ -25,6 +25,42 @@
     font-size: 1rem;
     line-height: 1.4rem;
   }
+  //TODO s
+  &__btn-Like {
+    background-color: rgb(169, 217, 246);
+    padding: 0.2rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    width: 5rem;
+    font-size: 1rem;
+    transform: perspective(100px) translateZ(-20px);
+    &:hover {
+      color: lightgrey;
+      background-color: rgb(10, 70, 116);
+    }
+  }
+  &__btn-Liked {
+    background-color: rgb(241, 241, 94);
+    padding: 0.2rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    width: 5rem;
+    font-size: 1rem;
+    transform: perspective(100px) translateZ(-20px);
+    &:hover {
+      color: lightgrey;
+      background-color: rgb(10, 70, 116);
+    }
+  }
+  &__star-icon {
+    width: 1rem;
+    padding: 0.2rem 0.2rem 0 0;
+    mask: yellow;
+  }
 }
 
 .apod__loading {

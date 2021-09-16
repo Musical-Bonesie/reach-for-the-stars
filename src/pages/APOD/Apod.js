@@ -1,7 +1,8 @@
 import { Component } from "react";
 import { getAllImages } from "../../utils/dataUtils";
-import "./Apod.scss";
 import ShootingStars from "../../components/ShootingStars/ShootingStars";
+import StarIcon from "../../assets/images/like-star.svg";
+import "./Apod.scss";
 //TODO remember to add photo alt {}
 
 export default class Stars extends Component {
@@ -16,17 +17,15 @@ export default class Stars extends Component {
         this.setState({ APOD: res.data });
       })
       .catch((error) => {
-        console.log("error in didmount", error);
+        console.log("error in DidMount", error);
       });
   }
   handleClick = (event) => {
-    // event.preventDefault()
-    console.log(event);
+    // TODO event.preventDefault();
     this.setState({ liked: !this.state.liked });
   };
   render() {
-    const text = this.state.liked ? "like" : "liked";
-    console.log(text);
+    const text = this.state.liked ? "Like" : "Liked";
     console.log("APOD:", this.state.APOD);
     const APOD = this.state.APOD;
     if (APOD === null) {
@@ -58,10 +57,25 @@ export default class Stars extends Component {
               <p className="card__copy">{APOD.explanation}</p>
             </article>
             <div className="card__button">
-              <button onClick={this.handleClick}>{text}</button>
+              <button
+                className={`card__btn-${text}`}
+                onClick={this.handleClick}
+              >
+                <img
+                  className="card__star-icon"
+                  src={StarIcon}
+                  alt="star icon for like button"
+                />
+
+                {text}
+              </button>
             </div>
           </section>
         </div>
+        <a href="https://dryicons.com/free-icons/star">
+          {" "}
+          StarIcon by Dryicons{" "}
+        </a>
       </>
     );
   }
