@@ -9,6 +9,7 @@
     width: 100%;
     object-position: center;
     object-fit: cover;
+    border: none;
     border-radius: 10px;
   }
   &__header {
@@ -25,7 +26,7 @@
     font-size: 1rem;
     line-height: 1.4rem;
   }
-  //TODO s
+  //TODO
   &__btn-Like {
     background-color: rgb(169, 217, 246);
     padding: 0.2rem;

@@ -49,7 +49,20 @@ export default class Stars extends Component {
             <h1 className="card__heading">Astronomy Picture of the Day</h1>
 
             <figure className="card__figure">
-              <img className="card__image" src={APOD.hdurl} alt={APOD.title} />
+              {/* TODO remeber to test iframe with an image <img className="card__image" src={APOD.hdurl} alt={APOD.title} /> */}
+              <iframe
+                className="card__image"
+                preload="metadata"
+                title={APOD.title}
+                poster={APOD.hdurl}
+                src={`${APOD.url}&autoplay=1&mute=1`}
+              >
+                <source
+                  type={APOD.media_type}
+                  src={`${APOD.url}&autoplay=1&mute=1`}
+                />
+                your browser does not support the iframe tag.
+              </iframe>
             </figure>
             <article className="card__header">
               <h1 className="card__content">{APOD.title}</h1>
