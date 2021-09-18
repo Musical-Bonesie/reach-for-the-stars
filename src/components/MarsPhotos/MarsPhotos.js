@@ -6,13 +6,23 @@ import "./MarsPhotos.scss";
 export default class MarsPhotos extends Component {
   state = {
     marsPhotos: null,
-    liked: false,
+    like: "Like",
+    liked: "Liked",
   };
 
   componentDidMount() {
     getMarsPhotos()
       .then((res) => {
-        this.setState({ marsPhotos: res.data.photos });
+        res.data.photos.map((obj) => {
+          return Object.defineProperty(obj, "like", {
+            value: "Like",
+            configurable: true,
+            writable: true,
+          });
+        });
+        this.setState({
+          marsPhotos: res.data.photos,
+        });
       })
       .catch((error) => {
         console.log("issue with componentDidMount", error);
@@ -24,13 +34,23 @@ export default class MarsPhotos extends Component {
     console.log("take me home?");
   };
 
-  handleLike = (event, id) => {
-    console.log("ID :", id, event);
+  handleLike = (event, clickedId) => {
+    let photos = this.state.marsPhotos;
+    const findClickedPhoto = photos.find((photo) => photo.id === clickedId);
+    console.log(findClickedPhoto);
+    if (findClickedPhoto.like === "Like") {
+      console.log("IF", findClickedPhoto.like);
+      findClickedPhoto.like = "Liked";
+    } else {
+      findClickedPhoto.like = "Like";
+    }
+
+    this.setState({ marsPhotos: photos });
   };
+
   render() {
     console.log("Mars Photos   :", this.state.marsPhotos);
     const marsPhotos = this.state.marsPhotos;
-    // const text = this.state.liked ? "Like" : "Liked";
 
     if (marsPhotos === null) {
       return (
@@ -47,6 +67,9 @@ export default class MarsPhotos extends Component {
       <>
         <h1>HELLO! I'M FROM MARS</h1>
         {marsPhotos.map((photo) => {
+          //   photo.like = "Like";
+          //   console.log(photo);
+          //   const text = photo.like ? "Liked" : "Like";
           return (
             <section className="mars__card" key={photo.id}>
               <h1 className="mars__heading">
@@ -70,8 +93,8 @@ export default class MarsPhotos extends Component {
                   src={photo.img_src}
                 />
               </MediaCard>
-              <button onClick={(event) => this.handleLike(photo.id, event)}>
-                Like
+              <button onClick={(event) => this.handleLike(event, photo.id)}>
+                {photo.like}
               </button>
             </section>
           );
