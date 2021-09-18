@@ -25,6 +25,7 @@ export default class Stars extends Component {
     this.setState({ liked: !this.state.liked });
   };
   render() {
+    //TODO add logic so it renders the <img/> is APOD is image and <iframe/> if medie type is a video
     const text = this.state.liked ? "Like" : "Liked";
     console.log("APOD:", this.state.APOD);
     const APOD = this.state.APOD;

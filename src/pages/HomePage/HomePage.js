@@ -27,7 +27,6 @@ export default class HomePage extends Component {
             alt="Stars"
             src={HeroStars}
           />
-          <button></button>
         </MediaCard>
       </>
     );
