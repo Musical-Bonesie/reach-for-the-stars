@@ -29,9 +29,8 @@ export default class MarsPhotos extends Component {
       });
   }
 
-  handleClick = (event, id) => {
-    // event.preventDefault();
-    console.log("take me home?");
+  handleClick = (event) => {
+    this.props.history.push("/");
   };
 
   handleLike = (event, clickedId) => {
@@ -67,9 +66,6 @@ export default class MarsPhotos extends Component {
       <>
         <h1>HELLO! I'M FROM MARS</h1>
         {marsPhotos.map((photo) => {
-          //   photo.like = "Like";
-          //   console.log(photo);
-          //   const text = photo.like ? "Liked" : "Like";
           return (
             <section className="mars__card" key={photo.id}>
               <h1 className="mars__heading">
@@ -80,7 +76,7 @@ export default class MarsPhotos extends Component {
               <MediaCard
                 title={photo.full_name}
                 primaryAction={{
-                  content: "Take me home",
+                  content: "Take Me Home",
                   onClick: this.handleClick,
                 }}
                 description={photo.camera.full_name}

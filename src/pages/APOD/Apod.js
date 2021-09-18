@@ -2,6 +2,7 @@ import { Component } from "react";
 import { getAllImages } from "../../utils/dataUtils";
 import ShootingStars from "../../components/ShootingStars/ShootingStars";
 import StarIcon from "../../assets/images/like-star.svg";
+import MarsPhotos from "../../components/MarsPhotos/MarsPhotos";
 import "./Apod.scss";
 //TODO remember to add photo alt {}
 
@@ -23,6 +24,10 @@ export default class Stars extends Component {
   handleClick = (event) => {
     // TODO event.preventDefault();
     this.setState({ liked: !this.state.liked });
+  };
+
+  backHome = (event) => {
+    this.props.history.push("/");
   };
   render() {
     //TODO add logic so it renders the <img/> is APOD is image and <iframe/> if medie type is a video
@@ -48,14 +53,14 @@ export default class Stars extends Component {
         <div>
           <section className="card">
             <h1 className="card__heading">Astronomy Picture of the Day</h1>
-
+            {/* TODO use logic to change className to hid mediatype depending on day */}
             <figure className="card__figure">
-              {/* TODO remeber to test iframe with an image <img className="card__image" src={APOD.hdurl} alt={APOD.title} /> */}
+              <img className="card__image" src={APOD.hdurl} alt={APOD.title} />
               <iframe
                 className="card__image"
                 preload="metadata"
                 title={APOD.title}
-                poster={APOD.hdurl}
+                poster={APOD.url}
                 src={`${APOD.url}&autoplay=1&mute=1`}
               >
                 <source
@@ -80,16 +85,17 @@ export default class Stars extends Component {
                   src={StarIcon}
                   alt="star icon for like button"
                 />
-
                 {text}
               </button>
             </div>
           </section>
         </div>
-        <a href="https://dryicons.com/free-icons/star">
-          {" "}
+        <button onClick={this.backHome}>Take Me Back Home</button>
+
+        <a className="icon__ref" href="https://dryicons.com/free-icons/star">
           StarIcon by Dryicons{" "}
         </a>
+        <MarsPhotos />
       </>
     );
   }

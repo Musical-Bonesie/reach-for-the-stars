@@ -28,9 +28,8 @@ function App() {
       >
         <Route exact path="/" component={HomePage} />
         <Route exact path="/marsroverphotos" component={MarsPhotos} />
+        <Route exact path="/astronomyoftheday" component={Apod} />
       </AppProvider>
-
-      <Route exact path="/astronomyoftheday" component={Apod} />
     </BrowserRouter>
   );
 }
