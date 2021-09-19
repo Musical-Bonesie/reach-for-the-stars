@@ -92,10 +92,10 @@ export default class Stars extends Component {
         </div>
         <button onClick={this.backHome}>Take Me Back Home</button>
 
+        <MarsPhotos />
         <a className="icon__ref" href="https://dryicons.com/free-icons/star">
           StarIcon by Dryicons{" "}
         </a>
-        <MarsPhotos />
       </>
     );
   }

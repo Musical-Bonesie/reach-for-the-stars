@@ -1,0 +1,70 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0.5rem;
+}
+.marsCard {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  width: 46%;
+  padding: 1rem;
+  margin: 1rem 0.75rem 0 0.75rem;
+  background: transparent;
+  box-shadow: 0px -2px 6px 4px rgb(145, 179, 200);
+  outline: 0.5px solid hsl(0, 1%, 69%);
+
+  &__header {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  &__heading {
+    font-size: 1.3rem;
+    line-height: 1.75rem;
+  }
+  &__date {
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.5rem;
+  }
+  &__mars-image {
+    width: 100%;
+  }
+  &__btn-Like {
+    display: block;
+    width: 5rem;
+    margin: 1rem;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    &:hover {
+      background-color: lightskyblue;
+      color: rgb(240, 236, 189);
+      border: none;
+    }
+    &:active {
+      transform: perspective(100px) translateZ(-10px);
+    }
+  }
+  &__btn-Liked {
+    display: block;
+    background-color: rgb(241, 241, 94);
+    width: 5rem;
+    margin: 1rem;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    &:hover {
+      background-color: lightskyblue;
+      color: rgb(240, 236, 189);
+      border: none;
+    }
+    &:active {
+      transform: perspective(100px) translateZ(-10px);
+    }
+  }
+  &__star-icon {
+    width: 1.2rem;
+    padding: 0.2rem 0.2rem 0 0;
+  }
+}

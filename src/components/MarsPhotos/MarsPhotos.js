@@ -1,6 +1,7 @@
 import { Component } from "react";
-import { MediaCard } from "@shopify/polaris";
 import { getMarsPhotos } from "../../utils/dataUtils";
+import StarIcon from "../../assets/images/like-star.svg";
+
 import "./MarsPhotos.scss";
 
 export default class MarsPhotos extends Component {
@@ -64,37 +65,38 @@ export default class MarsPhotos extends Component {
     }
     return (
       <>
-        <h1>HELLO! I'M FROM MARS</h1>
-        {marsPhotos.map((photo) => {
-          return (
-            <section className="mars__card" key={photo.id}>
-              <h1 className="mars__heading">
-                Camera name: {photo.camera.full_name}
-              </h1>
-              <h2 className="mars__heading">Rover name: {photo.rover.name}</h2>
-              <h3 className="mars__date">Date: {photo.earth_date}</h3>
-              <MediaCard
-                title={photo.full_name}
-                primaryAction={{
-                  content: "Take Me Home",
-                  onClick: this.handleClick,
-                }}
-                description={photo.camera.full_name}
-                popoverActions={[{ content: "Dismiss", onAction: () => {} }]}
-                size="small"
-              >
+        <h1 className="marsCard__header">HELLO! I'M FROM MARS</h1>
+        <div className="cards">
+          {marsPhotos.map((photo) => {
+            return (
+              <section className="marsCard" key={photo.id}>
+                <h1 className="marsCard__heading">{photo.camera.full_name}</h1>
+                <h2 className="marsCard__heading">
+                  Rover name: {photo.rover.name}
+                </h2>
+                <h3 className="marsCard__date">Date: {photo.earth_date}</h3>
+
                 <img
-                  className="Polaris-MediaCard__mars-image"
+                  className="marsCard__mars-image"
                   alt="Stars"
                   src={photo.img_src}
                 />
-              </MediaCard>
-              <button onClick={(event) => this.handleLike(event, photo.id)}>
-                {photo.like}
-              </button>
-            </section>
-          );
-        })}
+
+                <button
+                  className={`marsCard__btn-${photo.like}`}
+                  onClick={(event) => this.handleLike(event, photo.id)}
+                >
+                  <img
+                    className="marsCard__star-icon"
+                    src={StarIcon}
+                    alt="star icon for like button"
+                  />
+                  {photo.like}
+                </button>
+              </section>
+            );
+          })}
+        </div>
       </>
     );
   }
