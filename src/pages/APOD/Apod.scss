@@ -1,5 +1,5 @@
 .card {
-  margin: 1.5rem;
+  margin: 2rem 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -18,13 +18,16 @@
 
   &__heading {
     font-size: 2rem;
+    margin: 3rem 2rem 2rem;
   }
   &__content {
     font-size: 1.5rem;
+    margin: 1rem 0;
   }
   &__copy {
     font-size: 1rem;
     line-height: 1.4rem;
+    margin: 0.5rem 0;
   }
   //TODO
   &__btn-Like {

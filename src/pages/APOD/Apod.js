@@ -56,7 +56,7 @@ export default class Stars extends Component {
             {/* TODO use logic to change className to hid mediatype depending on day */}
             <figure className="card__figure">
               <img className="card__image" src={APOD.hdurl} alt={APOD.title} />
-              <iframe
+              {/* TODO check API if videos and images are given <iframe
                 className="card__image"
                 preload="metadata"
                 title={APOD.title}
@@ -68,7 +68,7 @@ export default class Stars extends Component {
                   src={`${APOD.url}&autoplay=1&mute=1`}
                 />
                 your browser does not support the iframe tag.
-              </iframe>
+              </iframe> */}
             </figure>
             <article className="card__header">
               <h1 className="card__content">{APOD.title}</h1>
