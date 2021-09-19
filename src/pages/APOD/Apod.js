@@ -31,7 +31,7 @@ export default class Stars extends Component {
   };
   render() {
     //TODO add logic so it renders the <img/> is APOD is image and <iframe/> if medie type is a video
-    const text = this.state.liked ? "Like" : "Liked";
+    const text = this.state.liked ? "Liked" : "Like";
     console.log("APOD:", this.state.APOD);
     const APOD = this.state.APOD;
     if (APOD === null) {
@@ -88,9 +88,11 @@ export default class Stars extends Component {
                 {text}
               </button>
             </div>
+            <button className="Polaris-Button" onClick={this.backHome}>
+              Take Me Back Home
+            </button>
           </section>
         </div>
-        <button onClick={this.backHome}>Take Me Back Home</button>
 
         <MarsPhotos />
         <a className="icon__ref" href="https://dryicons.com/free-icons/star">
