@@ -11,4 +11,3 @@
 - add a database
 - add user profile to keep track of liked images
 - add a shareable link to each image
--
