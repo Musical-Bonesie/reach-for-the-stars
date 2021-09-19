@@ -58,4 +58,4 @@ export default function ShootingStars() {
 }
 
 //Animation found at: https://codepen.io/alphardex/pen/RwrVoeL
-//Thanks for the amazing shooting star animation!
+//Thanks for the amazing shooting star animation @alphardex!

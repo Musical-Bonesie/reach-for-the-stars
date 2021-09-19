@@ -17,8 +17,36 @@
   outline: 0.5px solid hsl(0, 1%, 69%);
 
   &__header {
-    font-size: 2rem;
-    padding: 1rem;
+    //Cut Header styling from: Joseph Wong from Medium.com
+    $random-text: "WELCOME TO MARS";
+    margin: 1.5rem;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: transparent;
+    font-weight: 900;
+    font-family: "Catamaran", sans-serif;
+    font-style: italic;
+
+    &:after {
+      content: $random-text;
+      position: absolute;
+      left: -10px;
+      top: -2px;
+      color: rgb(145, 179, 200);
+      $path: polygon(0 25%, 100% 65%, 100% 100%, 0% 100%);
+      -webkit-clip-path: $path;
+      clip-path: $path;
+    }
+
+    &:before {
+      content: $random-text;
+      position: absolute;
+      color: rgb(145, 179, 200);
+      $path: polygon(0 0, 110% 0, 100% 65%, 0 25%);
+      -webkit-clip-path: $path;
+      clip-path: $path;
+    }
   }
   &__heading {
     font-size: 1.3rem;
@@ -31,6 +59,10 @@
   }
   &__mars-image {
     width: 100%;
+    &:hover {
+      transform: perspective(100px) translateZ(5px);
+      border: 3px solid rgb(241, 241, 153);
+    }
   }
   &__btn-Like {
     display: block;
@@ -39,7 +71,7 @@
     border: 1px solid lightgrey;
     border-radius: 3px;
     &:hover {
-      background-color: lightskyblue;
+      background-color: rgb(145, 179, 200);
       color: rgb(240, 236, 189);
       border: none;
     }
@@ -55,7 +87,7 @@
     border: 1px solid lightgrey;
     border-radius: 3px;
     &:hover {
-      background-color: lightskyblue;
+      background-color: rgb(145, 179, 200);
       color: rgb(240, 236, 189);
       border: none;
     }

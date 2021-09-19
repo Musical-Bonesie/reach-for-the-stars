@@ -10,14 +10,15 @@
   left: 0;
   width: 100%;
   height: 120%;
-  //added z-index to allow for button click on Apod page
+  //added z-index to allow for button click on Apod page and allow stars to be seen throughout the page.
   z-index: -1;
   transform: rotate(-45deg);
 }
 
 .star {
   $star-count: 50;
-  --star-color: var(--primary-color);
+  // --star-color: var(--primary-color);
+  --star-color: rgb(182, 182, 0);
   --star-tail-length: 6em;
   --star-tail-height: 2px;
   --star-width: calc(var(--star-tail-length) / 6);

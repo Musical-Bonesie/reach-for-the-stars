@@ -65,8 +65,9 @@ export default class MarsPhotos extends Component {
     }
     return (
       <>
-        <h1 className="marsCard__header">HELLO! I'M FROM MARS</h1>
         <div className="cards">
+          <h1 className="marsCard__header">WELCOME TO MARS</h1>
+
           {marsPhotos.map((photo) => {
             return (
               <section className="marsCard" key={photo.id}>
