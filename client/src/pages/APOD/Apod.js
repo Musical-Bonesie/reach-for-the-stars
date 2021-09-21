@@ -4,7 +4,6 @@ import ShootingStars from "../../components/ShootingStars/ShootingStars";
 import StarIcon from "../../assets/images/like-star.svg";
 import MarsPhotos from "../../components/MarsPhotos/MarsPhotos";
 import "./Apod.scss";
-//TODO remember to add photo alt {}
 
 export default class Stars extends Component {
   state = {
@@ -22,7 +21,6 @@ export default class Stars extends Component {
       });
   }
   handleClick = (event) => {
-    // TODO event.preventDefault();
     this.setState({ liked: !this.state.liked });
   };
 
@@ -30,7 +28,6 @@ export default class Stars extends Component {
     this.props.history.push("/");
   };
   render() {
-    //TODO add logic so it renders the <img/> is APOD is image and <iframe/> if medie type is a video
     const text = this.state.liked ? "Liked" : "Like";
     console.log("APOD:", this.state.APOD);
     const APOD = this.state.APOD;
@@ -53,22 +50,8 @@ export default class Stars extends Component {
         <div>
           <section className="card">
             <h1 className="card__heading">Astronomy Picture of the Day</h1>
-            {/* TODO use logic to change className to hid mediatype depending on day */}
             <figure className="card__figure">
               <img className="card__image" src={APOD.hdurl} alt={APOD.title} />
-              {/* TODO check API if videos and images are given <iframe
-                className="card__image"
-                preload="metadata"
-                title={APOD.title}
-                poster={APOD.url}
-                src={`${APOD.url}&autoplay=1&mute=1`}
-              >
-                <source
-                  type={APOD.media_type}
-                  src={`${APOD.url}&autoplay=1&mute=1`}
-                />
-                your browser does not support the iframe tag.
-              </iframe> */}
             </figure>
             <article className="card__header">
               <h1 className="card__content">{APOD.title}</h1>
