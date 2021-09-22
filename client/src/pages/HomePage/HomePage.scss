@@ -1,3 +1,5 @@
+@use "../../partials/mixins" as *;
+
 .Polaris-MediaCard {
   display: flex;
   flex-direction: column;
@@ -15,17 +17,27 @@
 
 .Polaris {
   &-Heading {
+    font-size: 1.2rem;
     color: rgb(145, 179, 200);
     padding: 5rem 1rem 1.5rem;
     text-align: center;
+    @include tablet {
+      font-size: 2rem;
+    }
   }
   &-Stack__Item {
-    font-size: 1.5rem;
+    text-align: center;
+
+    font-size: 1rem;
     padding: 0 1rem;
+    @include tablet {
+      font-size: 1.5rem;
+    }
   }
   &-Button {
     flex-basis: 100%;
-    margin: 1.5rem 0;
+    // margin: 1.5rem 0;
+    margin: 5% 10% 0 10%;
     align-items: center;
     background-color: rgb(164, 189, 204);
     border: 2px solid #111;
@@ -47,6 +59,9 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    @include tablet {
+      margin: 5% 20% 0 30%;
+    }
 
     &:after {
       background-color: #111;
