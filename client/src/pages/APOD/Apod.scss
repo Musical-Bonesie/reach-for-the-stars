@@ -1,3 +1,5 @@
+@use "../../partials/mixins" as *;
+
 .card {
   margin: 2rem 0;
   display: flex;
@@ -5,8 +7,20 @@
   flex-wrap: wrap;
   background-color: transparent;
 
+  &__video {
+    width: 100vw;
+    height: 30vh;
+    border: none;
+    object-position: center;
+    object-fit: cover;
+    border: none;
+    @include tablet {
+      height: 50vh;
+    }
+  }
   &__image {
     width: 100%;
+    border: none;
     object-position: center;
     object-fit: cover;
     border: none;
@@ -14,20 +28,32 @@
   }
   &__header {
     padding: 1rem;
+    @include tablet {
+      padding: 2rem;
+    }
   }
 
   &__heading {
-    font-size: 2rem;
+    font-size: 1.2rem;
     margin: 3rem 2rem 2rem;
+    @include tablet {
+      font-size: 2.5rem;
+    }
   }
   &__content {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 1rem 0;
+    @include tablet {
+      font-size: 1.5rem;
+    }
   }
   &__copy {
     font-size: 1rem;
     line-height: 1.4rem;
     margin: 0.5rem 0;
+    @include tablet {
+      font-size: 1.2rem;
+    }
   }
 
   &__btn-Like {
@@ -75,4 +101,13 @@
   display: block;
   text-decoration: none;
   color: lightgray;
+}
+.media {
+  &--visable {
+    background-color: pink;
+  }
+  &--hide {
+    display: none;
+    background-color: chartreuse;
+  }
 }

@@ -31,6 +31,7 @@ export default class Stars extends Component {
     const text = this.state.liked ? "Liked" : "Like";
     console.log("APOD:", this.state.APOD);
     const APOD = this.state.APOD;
+
     if (APOD === null) {
       return (
         <>
@@ -42,6 +43,7 @@ export default class Stars extends Component {
         </>
       );
     }
+    console.log(APOD.media_type);
     return (
       <>
         <div>
@@ -51,7 +53,20 @@ export default class Stars extends Component {
           <section className="card">
             <h1 className="card__heading">Astronomy Picture of the Day</h1>
             <figure className="card__figure">
-              <img className="card__image" src={APOD.hdurl} alt={APOD.title} />
+              <iframe
+                className={`card__video  ${
+                  APOD.media_type === "video" ? "media--visable" : "media--hide"
+                }`}
+                src={`${APOD.url}&autoplay=1&mute=1`}
+                title={APOD.title}
+              ></iframe>
+              <img
+                className={`card__image  ${
+                  APOD.media_type === "image" ? "media--visable" : "media--hide"
+                }`}
+                src={APOD.hdurl}
+                alt={APOD.title}
+              />
             </figure>
             <article className="card__header">
               <h1 className="card__content">{APOD.title}</h1>
