@@ -1,3 +1,5 @@
+@use "../../partials/mixins" as *;
+
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -7,26 +9,40 @@
 .marsCard {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  width: 46%;
+  justify-content: center;
   padding: 1rem;
   margin: 1rem 0.75rem 0 0.75rem;
   background: transparent;
   box-shadow: 0px -2px 6px 4px rgb(145, 179, 200);
   outline: 0.5px solid hsl(0, 1%, 69%);
+  @include tablet {
+    width: 46%;
+  }
+  @include desktop {
+    width: 30%;
+  }
 
+  &__header-wrapper {
+    align-self: center;
+  }
   &__header {
     //References Cut Header Styling: Joseph Wong from Medium.com
+    flex-basis: 100%;
     $random-text: "WELCOME TO MARS";
-    margin: 1.5rem;
     position: relative;
     text-transform: uppercase;
-    font-size: 3rem;
+    font-size: 2rem;
     color: transparent;
     font-weight: 900;
     font-family: "Catamaran", sans-serif;
     font-style: italic;
+
+    @include tablet {
+      font-size: 3rem;
+    }
+    @include desktop {
+      font-size: 6rem;
+    }
 
     &:after {
       content: $random-text;
@@ -49,10 +65,12 @@
     }
   }
   &__heading {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 1.75rem;
   }
   &__date {
+    flex-basis: 100%;
+    text-align: center;
     font-size: 1rem;
     font-weight: 400;
     padding: 0.5rem;

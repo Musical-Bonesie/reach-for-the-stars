@@ -49,7 +49,6 @@ export default class MarsPhotos extends Component {
   };
 
   render() {
-    console.log("Mars Photos   :", this.state.marsPhotos);
     const marsPhotos = this.state.marsPhotos;
 
     if (marsPhotos === null) {
@@ -66,7 +65,9 @@ export default class MarsPhotos extends Component {
     return (
       <>
         <div className="cards">
-          <h1 className="marsCard__header">WELCOME TO MARS</h1>
+          <div className="marsCard__header-wrapper">
+            <h1 className="marsCard__header">WELCOME TO MARS</h1>
+          </div>
 
           {marsPhotos.map((photo) => {
             return (
